@@ -100,14 +100,14 @@ if uploaded_file:
     tools_found = extract_tools(resume_text, all_tools)
     experience_text = extract_experience(resume_text)
 
-    st.subheader("🛠Extracted Skills")
-    st.write(skills_found)
+    # st.subheader("🛠Extracted Skills")
+    # st.write(skills_found)
 
-    st.subheader("Extracted Tools")
-    st.write(tools_found)
+    # st.subheader("Extracted Tools")
+    # st.write(tools_found)
 
-    st.subheader("Extracted Experience")
-    st.write(experience_text[:1000])
+    # st.subheader("Extracted Experience")
+    # st.write(experience_text[:1000])
 
     combined_resume_text = build_resume_text(resume_text, skills_found, tools_found, experience_text)
 
