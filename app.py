@@ -80,7 +80,8 @@ uploaded_file = st.file_uploader("Upload Resume (PDF)", type="pdf")
 if uploaded_file:
     st.info("Resume uploaded successfully!")
 
-    jobs_df = pd.read_csv("jobs.csv")
+   jobs_df = pd.read_csv("jobs.csv", on_bad_lines='skip', engine='python')
+
 
     # Predefined skill & tool sets based on jobs.csv columns
     # Extract unique skills and tools from jobs_df columns
