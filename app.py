@@ -73,12 +73,12 @@ def match_resume_to_jobs(resume_text, jobs_df, top_n=5):
 # Streamlit UI
 # --------------------------
 
-st.title("📄 AI-Powered Resume Matcher with Skills, Experience & Tools")
+st.title("AI-Powered Resume Matcher with Skills, Experience & Tools")
 
 uploaded_file = st.file_uploader("Upload Resume (PDF)", type="pdf")
 
 if uploaded_file:
-    st.info("✅ Resume uploaded successfully!")
+    st.info("Resume uploaded successfully!")
 
     jobs_df = pd.read_csv("jobs.csv")
 
@@ -99,17 +99,17 @@ if uploaded_file:
     tools_found = extract_tools(resume_text, all_tools)
     experience_text = extract_experience(resume_text)
 
-    st.subheader("🛠️ Extracted Skills")
+    st.subheader("🛠Extracted Skills")
     st.write(skills_found)
 
-    st.subheader("🔧 Extracted Tools")
+    st.subheader("Extracted Tools")
     st.write(tools_found)
 
-    st.subheader("💼 Extracted Experience")
+    st.subheader("Extracted Experience")
     st.write(experience_text[:1000])
 
     combined_resume_text = build_resume_text(resume_text, skills_found, tools_found, experience_text)
 
-    st.subheader("🔍 Top Job Matches")
+    st.subheader("Top Job Matches")
     results = match_resume_to_jobs(combined_resume_text, jobs_df, top_n=5)
     st.dataframe(results.style.format({"Score": "{:.2f}"}))
