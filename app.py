@@ -73,7 +73,7 @@ def match_resume_to_jobs(resume_text, jobs_df, top_n=5):
 # Streamlit UI
 # --------------------------
 
-st.title("AI-Powered Resume Matcher with Skills, Experience & Tools")
+st.title("AI-Powered Resume Screener")
 
 uploaded_file = st.file_uploader("Upload Resume (PDF)", type="pdf")
 
